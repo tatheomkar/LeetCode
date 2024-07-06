@@ -40,6 +40,15 @@ Solution:
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
+        num = x
+        newNum = 0
+        while num > 0:
+            digit = num % 10
+            newNum = newNum * 10 + digit
+            num = num // 10
+        return newNum == x
+
+        '''
         temp_string = str(x)
         lengthh = int(len(temp_string)/2+len(temp_string)%2)
         #below range is used to get mid of length without math lib import
@@ -49,3 +58,4 @@ class Solution:
             if temp_string[i] != temp_string[j]:
                 return False
         return True
+        '''
